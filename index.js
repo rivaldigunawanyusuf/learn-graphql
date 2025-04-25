@@ -1,47 +1,28 @@
+// import libraries and dependencies
+import { gql } from 'graphql-tag';
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { products } from "./_products.js";
-import { customers } from "./_customers.js";
 
-const typeDefs = `#graphql
-  type Product {
-    id: ID!
-    name: String!
-    price: Float!
-    description: String
-    category: String
-    stock: Int
-    rating: Float
-    reviews: Int
-    manufacturer: String
-    created_at: String!
-  }
+// import types
+import { productType } from './typeDefs/productType.js';
+import { customerType } from './typeDefs/customerType.js';
 
-  type Customer {
-    id: ID!
-    name: String!
-    email: String!
-    phone: String
-    address: String
-    age: Int
-    occupation: String
-    membership: String
-    created_at: String!
-    last_order_date: String
-  }
+// import resolvers
+import { productResolver } from './resolvers/productResolver.js';
+import { customerResolver } from './resolvers/customerResolver.js';
 
-  # Query is a special object in GraphQL, it's the main entry point for all queries
-  type Query {
-    products: [Product]
-    customers: [Customer]
-  }
+export const typeDefs = gql`
+  ${productType}
+  ${customerType}
+
+  type Query
 `;
 
-const resolvers = {
+export const resolvers = {
   Query: {
-    products: () => products,
-    customers: () => customers,
-  },
+    ...productResolver.Query,
+    ...customerResolver.Query
+  }
 };
 
 const server = new ApolloServer({
