@@ -15,4 +15,5 @@ This repository contains simple examples and exercises to help understand GraphQ
 ## Resources
 
 - [GraphQL Official Documentation](https://graphql.org/learn/)
-- [Apollo GraphQL](https://www.apollographql.com/docs/)
+- [Apollo Server Documentation](https://www.apollographql.com/docs/apollo-server/)
+- [Nodemon Documentation](https://nodemon.io/)
