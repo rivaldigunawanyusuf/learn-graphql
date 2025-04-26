@@ -19,6 +19,7 @@ export const typeDefs = gql`
   ${loanType}
 
   type Query
+  type Mutation
 `;
 
 export const resolvers = {
@@ -26,6 +27,11 @@ export const resolvers = {
     ...productResolver.Query,
     ...customerResolver.Query,
     ...loanResolver.Query,
+  },
+  Mutation: {
+    ...productResolver.Mutation,
+    ...customerResolver.Mutation,
+    ...loanResolver.Mutation,
   },
   Product: {
     ...productResolver.Product,
