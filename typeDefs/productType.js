@@ -10,6 +10,8 @@ export const productType = `#graphql
     reviews: Int
     manufacturer: String
     created_at: String!
+
+    loans: [Loan!]
   }
 
   extend type Query {

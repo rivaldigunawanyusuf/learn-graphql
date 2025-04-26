@@ -1,4 +1,5 @@
 import { products } from "../data/_products.js";
+import { itemLoans } from "../data/_loans.js";
 
 export const productResolver = {
   Query: {
@@ -8,5 +9,10 @@ export const productResolver = {
       if (!product) throw new Error("Product not found");
       return product;
     }
+  },
+  Product: {
+    loans: (parent) => {
+      return itemLoans.filter((loan) => loan.product_id == parent.id);
+    },
   }
 };

@@ -10,6 +10,8 @@ export const customerType = `#graphql
     membership: String
     created_at: String!
     last_order_date: String
+
+    loans: [Loan!]
   }
 
   extend type Query {
