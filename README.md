@@ -18,3 +18,7 @@ This repository contains simple examples and exercises to help understand GraphQ
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
 - [Nodemon](https://nodemon.io/)
 - [GraphQL Tag](https://github.com/apollographql/graphql-tag)
+
+## License
+
+This project is for educational purposes and does not include any licensing restrictions.
